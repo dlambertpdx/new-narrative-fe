@@ -18,11 +18,11 @@ export const Login = () => {
       setError('');
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
+      setLoading(false);
       history.push('/');
     } catch {
       setError('Failed to sign in');
     }
-    setLoading(false);
   }
 
   return (
